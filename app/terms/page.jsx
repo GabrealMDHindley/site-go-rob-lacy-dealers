@@ -17,7 +17,7 @@ export default function Terms() {
         <p>This website is operated by {SITE.legalName}. By using it you agree to these terms. The content is for general information. Booking a call does not create a contract or any obligation to buy.</p>
 
         <h2>The calculator</h2>
-        <p>The dealership calculator is a what-if tool. It multiplies the numbers you enter. It is an estimate, not a prediction, promise or guarantee of any result.</p>
+        <p>The commission calculator is a what-if tool. It multiplies the numbers you enter. It is an estimate, not a prediction, promise or guarantee of any result.</p>
 
         <h2>SMS terms</h2>
         <p><strong>Program:</strong> Go Rob Lacy appointment and offer messages. If you opt in on our booking form, we may text you about your call and this offer, including appointment confirmations and reminders.</p>

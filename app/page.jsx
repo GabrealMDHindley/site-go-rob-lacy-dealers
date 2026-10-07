@@ -341,9 +341,9 @@ export default function Home() {
         <div className="wrap wrap-64">
           <Head
             id="calc-title"
-            eyebrow="Dealership calculator"
-            title="What's one more closing point worth to *your* store?"
-            lede="Slide in your own numbers. Faster replies and steady follow-up are about closing more of the leads you already have — here's the math on what that could be worth."
+            eyebrow="Commission calculator"
+            title="What could your leads be worth to *you?*"
+            lede="Slide in your own numbers — your leads, closing rate, average vehicle price, deals per month and commission percentage — to see what closing more of the leads you already have could be worth."
           />
           <Calculator />
         </div>
