@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon-32.png">
+<style>body{margin:0}</style>
+<title>Go Rob Lacy Video Scripts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>/* Layout: one readable column like a printed shooting script; the guide opens with
+   reference photos, then each script reads like a teleprompter with directions set apart. */
+:root {
+  --bg: #f7f4ec;
+  --surface: #fffdf8;
+  --ink: #0a1f44;
+  --ink-2: #44506a;
+  --muted: #6c7489;
+  --line: #e4dccb;
+  --gold: #855900;
+  --gold-fill: #e2b446;
+  --gold-soft: #f6ead0;
+  --navy-soft: #e3e8f2;
+  --ph-bg: #fdf1cf;
+  --ph-ink: #6d4800;
+  --warn-bg: #fbf3e2;
+  --f-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #061229; --surface: #0b1a36; --ink: #f2eee4; --ink-2: #c3c9d6; --muted: #8e98ad;
+    --line: #1d2d4f; --gold: #f4cc62; --gold-fill: #e2b446; --gold-soft: #2a2410;
+    --navy-soft: #13254a; --ph-bg: #3a2f10; --ph-ink: #f7d774; --warn-bg: #171d2c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #061229; --surface: #0b1a36; --ink: #f2eee4; --ink-2: #c3c9d6; --muted: #8e98ad;
+  --line: #1d2d4f; --gold: #f4cc62; --gold-fill: #e2b446; --gold-soft: #2a2410;
+  --navy-soft: #13254a; --ph-bg: #3a2f10; --ph-ink: #f7d774; --warn-bg: #171d2c;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--f-body); -webkit-font-smoothing: antialiased; }
+a { color: var(--gold); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--gold-fill); outline-offset: 3px; border-radius: 4px; }
+img { max-width: 100%; height: auto; display: block; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.page { max-width: 54rem; margin: 0 auto; padding-inline: 20px; padding-block: 0 64px; }
+
+/* top bar */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px;
+  padding-block: 12px; background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: 10px; font: 800 15px/1 var(--f-display); letter-spacing: .04em; text-transform: uppercase; }
+.brand em { font-style: normal; color: var(--gold); font-weight: 700; }
+.top nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 14px; font-weight: 600; }
+.top nav a { color: var(--ink-2); text-decoration: none; }
+.top nav a:hover { color: var(--gold); }
+
+/* type */
+.eyebrow { font: 700 12px/1.3 var(--f-display); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin: 0 0 10px; }
+h1, h2, h3, h4 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.08; font-weight: 800; letter-spacing: -.01em; }
+h2 { font-size: clamp(25px, 4.4vw, 34px); line-height: 1.15; font-weight: 800; }
+h3 { font-size: 19px; line-height: 1.3; font-weight: 700; }
+.lede { font-size: 18px; color: var(--ink-2); max-width: 40rem; margin: 14px 0 0; }
+
+/* intro */
+.intro { padding-block: 44px 8px; }
+.jump { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 12px; margin-top: 28px; }
+.j { display: grid; gap: 4px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); text-decoration: none; color: var(--ink); }
+.j b { font: 700 16px/1.2 var(--f-display); }
+.j span { font-size: 14px; color: var(--muted); }
+.j:hover { border-color: var(--gold-fill); }
+
+/* guide */
+.guide, .script { padding-top: 56px; margin-top: 48px; border-top: 2px solid var(--ink); }
+.g-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 16px; margin-top: 28px; }
+.ref { margin: 0; display: grid; gap: 10px; min-width: 0; }
+.ref img { border-radius: 8px; border: 1px solid var(--line); aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+.ref figcaption { font-size: 14px; color: var(--ink-2); }
+.grid-ref { max-width: 30rem; margin-top: 24px; }
+.grid-ref img { aspect-ratio: auto; }
+
+.rules { margin-top: 32px; }
+.nn { margin: 14px 0 0; padding: 0; list-style: none; counter-reset: nn; display: grid; gap: 10px; }
+.nn li { counter-increment: nn; position: relative; padding-left: 2.4rem; color: var(--ink-2); }
+.nn li::before { content: counter(nn); position: absolute; left: 0; top: .2em; width: 1.6rem; text-align: right; font: 800 15px/1.2 var(--f-display); color: var(--gold); }
+.nn b { color: var(--ink); }
+
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 14px; margin-top: 28px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; min-width: 0; }
+.card h3 { margin-bottom: 10px; }
+.card ul { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; font-size: 15px; color: var(--ink-2); }
+.card p { margin: 0; font-size: 15px; color: var(--ink-2); }
+.card.warn { background: var(--warn-bg); border-color: var(--gold-fill); }
+.check, .guide > .card:last-child { margin-top: 14px; }
+.hint { font-size: 13px !important; color: var(--muted) !important; margin: -4px 0 12px !important; }
+.ticks { list-style: none; padding: 0 !important; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 6px 18px !important; }
+.ticks label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; color: var(--ink); }
+.ticks input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--gold-fill); flex: none; }
+.ticks input:checked + span { color: var(--muted); text-decoration: line-through; }
+
+/* script */
+.script-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.meta { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+.copy {
+  font: 600 14px/1 var(--f-body); color: var(--ink); background: var(--surface); cursor: pointer;
+  border: 1px solid var(--ink); border-radius: 999px; padding: 11px 18px;
+}
+.copy:hover { background: var(--ink); color: var(--bg); }
+textarea.shown { display: block; width: 100%; min-height: 12rem; margin-top: 16px; font: 13px/1.5 var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+
+.tl { display: flex; gap: 2px; margin-top: 26px; height: 34px; border-radius: 6px; overflow: hidden; }
+.tl span { min-width: 0; display: flex; align-items: center; padding-inline: 6px; background: var(--navy-soft); }
+.tl span:nth-child(even) { background: var(--gold-soft); }
+.tl i { font: 600 11px/1.1 var(--f-body); font-style: normal; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tl-scale { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-top: 6px; font-variant-numeric: tabular-nums; }
+
+.sec { padding-block: 30px; border-bottom: 1px solid var(--line); max-width: 44rem; }
+.sec:last-of-type { border-bottom: 0; }
+.sec-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 10px; }
+.time { font: 700 13px/1 var(--f-display); color: var(--gold); font-variant-numeric: tabular-nums; letter-spacing: .04em; white-space: nowrap; }
+.dir { margin: 0 0 16px; font-size: 14.5px; font-style: italic; color: var(--muted); }
+.dir::before { content: "Direction · "; font-style: normal; font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.say { margin: 0 0 12px; font-size: 18px; line-height: 1.65; color: var(--ink); }
+.say strong { font-weight: 700; }
+.say-list { margin: 0 0 14px; padding-left: 1.2em; display: grid; gap: 6px; font-size: 18px; line-height: 1.55; }
+.version {
+  display: inline-block; margin: 14px 0 8px; padding: 4px 10px; border-radius: 999px;
+  font: 700 11px/1.3 var(--f-display); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink); border: 1px solid var(--ink-2);
+}
+.step { font-size: 17px; margin: 6px 0 8px; }
+hr.beat { border: 0; border-top: 1px dashed var(--line); margin: 22px 0; }
+.who {
+  display: inline-block; margin-right: 6px; padding: 1px 8px; border-radius: 4px; vertical-align: 2px;
+  font: 700 11px/1.5 var(--f-display); letter-spacing: .06em; text-transform: uppercase;
+  background: var(--navy-soft); color: var(--ink);
+}
+.ph { background: var(--ph-bg); color: var(--ph-ink); padding: 0 4px; border-radius: 3px; font-weight: 700; font-size: .92em; letter-spacing: .02em; }
+
+.foot { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; }
+.foot p { margin: 0; }
+
+@media (max-width: 560px) {
+  .say, .say-list { font-size: 17px; }
+  .tl i { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div class="brand"><img src="/film-r8d4/img/emblem.svg" alt="" width="40" height="23"><span>Go Rob Lacy <em>Inc.</em></span></div>
+    <nav aria-label="Sections">
+      <a href="#filming">Filming guide</a>
+      <a href="#vsl">VSL script</a>
+      <a href="#confirmation">Confirmation script</a>
+    </nav>
+  </header>
+
+  <div class="intro">
+    <p class="eyebrow">Dealer free-build page · video scripts</p>
+    <h1>Video scripts for Rob &amp; David</h1>
+    <p class="lede">Everything you need to film the two videos for the dealer page: how to set up, how to frame the shot, and both scripts.</p>
+    <div class="jump">
+      <a href="#filming" class="j"><b>Filming guide</b><span>Setup, framing, mic, checklist</span></a>
+      <a href="#vsl" class="j"><b>VSL script</b><span>About 5 minutes · landing page</span></a>
+      <a href="#confirmation" class="j"><b>Confirmation script</b><span>About 3½ minutes · after booking</span></a>
+    </div>
+  </div>
+
+  
+<section class="guide" id="filming">
+  <p class="eyebrow">Before you film</p>
+  <h2>Filming guide</h2>
+  <p class="lede">Two short videos for the Go Rob Lacy dealer page. The <strong>VSL</strong> plays at the top of the landing page. The <strong>confirmation video</strong> plays on the page people see right after they book their free build call. Rob or David can film either one alone, or both of you can film together.</p>
+
+  <div class="g-grid">
+    <figure class="ref">
+      <img src="/film-r8d4/img/ref-1-desk-setup.jpg" alt="Reference setup: presenter seated at a desk, talking to camera, black shirt, dark background" width="1400" height="781">
+      <figcaption><b>VSL setup to recreate.</b> Seated at a desk, talking to the camera, black shirt, dark clean background. Sit the same distance from the camera as this.</figcaption>
+    </figure>
+    <figure class="ref">
+      <img src="/film-r8d4/img/ref-3-confirmation-setup.jpg" alt="Reference setup for the confirmation video" width="1400" height="789">
+      <figcaption><b>Confirmation video setup.</b> Same idea: seated, relaxed, speaking straight to the lens.</figcaption>
+    </figure>
+  </div>
+
+  <div class="rules">
+    <h3>Non-negotiables</h3>
+    <ol class="nn">
+      <li><b>Use the best camera you have.</b> This needs to be the highest quality possible. A recent phone in 4K is fine.</li>
+      <li><b>USE A MICROPHONE.</b> A clip-on lav mic on your shirt, or a shotgun mic just out of frame. Never the camera's built-in mic.</li>
+      <li><b>Film horizontal, 16:9.</b> Both videos play in a wide frame on the website.</li>
+      <li><b>Recreate the setup above.</b> Sit at a desk and talk to the camera, at the same distance as the photo.</li>
+      <li><b>Talk like you're talking to a friend.</b> Actually speak to them. Don't go too salesy. Watch the video on <a href="https://site.trainandscale.com/" target="_blank" rel="noopener">site.trainandscale.com</a> before you film.</li>
+      <li><b>Take your time.</b> Don't rush or get frustrated. If you think you can do a line better, repeat it until it's your best.</li>
+      <li><b>Wear black.</b> Black business-professional for the VSL; dark or black clothes for the confirmation video.</li>
+      <li><b>Clean, professional background.</b> Nothing cluttered or distracting behind you.</li>
+      <li><b>Use the grid on your camera.</b> Line your eyes up on the line shown below.</li>
+    </ol>
+  </div>
+
+  <figure class="ref grid-ref">
+    <img src="/film-r8d4/img/ref-2-camera-grid.jpg" alt="Camera grid framing reference: eyes lined up on the grid line" width="1022" height="640">
+    <figcaption><b>Framing.</b> Turn on your camera's grid and line your eyes up on that line, as in this frame.</figcaption>
+  </figure>
+
+  <div class="cols">
+    <div class="card">
+      <h3>Set up the shot</h3>
+      <ul>
+        <li>Camera on a tripod at eye level, about arm's length to a few feet away, so you're framed from the chest up with a little desk visible.</li>
+        <li>Light your face from the front and slightly to one side: a window or a soft light at about 45°. Keep bright windows out from behind you.</li>
+        <li>Turn off fans and air conditioning, and silence phones. Check the mic level with a test clip before the first take.</li>
+        <li>Look into the lens, not at the screen.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Solo or together</h3>
+      <ul>
+        <li><b>Filming alone:</b> read every section yourself. Say your own name where it says <span class="ph">ACTOR FIRST NAME</span> and your partner's name where it says <span class="ph">PARTNER FIRST NAME</span>.</li>
+        <li><b>Filming together:</b> decide who is Presenter 1 and who is Presenter 2. Follow the <span class="who">Presenter 1</span> / <span class="who">Presenter 2</span> tags, and use the <i>Together</i> lines instead of the <i>Solo</i> lines.</li>
+        <li>In the together lines, each of you always says your own first name.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>How to read the scripts</h3>
+      <ul>
+        <li><b>Normal text is spoken.</b> Grey italic lines under each heading are directions. Don't say them.</li>
+        <li>The times next to each section are a guide to pacing, not a hard limit.</li>
+        <li>Film one section at a time. Leave two seconds of silence before and after each take so the edit is clean.</li>
+      </ul>
+    </div>
+    <div class="card warn">
+      <h3>Say the offer exactly as written</h3>
+      <ul>
+        <li>The website, CRM, SMS automations and email automations are <b>built free</b>, with <b>no obligation</b>.</li>
+        <li>Don't add prices, results, numbers or promises that aren't in the script.</li>
+        <li>If a line doesn't feel natural, ask before changing what it promises. Small wording changes are fine.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card check" id="checklist">
+    <h3>Filming-day checklist</h3>
+    <p class="hint">Ticks are saved in this browser only.</p>
+    <ul class="ticks">
+      <li><label><input type="checkbox" id="tick-0"><span>Watched the reference video</span></label></li><li><label><input type="checkbox" id="tick-1"><span>Camera set to 4K (or the best it has), 16:9 horizontal</span></label></li><li><label><input type="checkbox" id="tick-2"><span>Grid on, eyes on the line</span></label></li><li><label><input type="checkbox" id="tick-3"><span>Microphone connected and a test clip checked</span></label></li><li><label><input type="checkbox" id="tick-4"><span>Front light on, no bright window behind</span></label></li><li><label><input type="checkbox" id="tick-5"><span>Black / dark clothes</span></label></li><li><label><input type="checkbox" id="tick-6"><span>Background clean</span></label></li><li><label><input type="checkbox" id="tick-7"><span>Solo or together decided (and who is Presenter 1)</span></label></li><li><label><input type="checkbox" id="tick-8"><span>VSL filmed, every section</span></label></li><li><label><input type="checkbox" id="tick-9"><span>Confirmation video filmed</span></label></li><li><label><input type="checkbox" id="tick-10"><span>Original files sent (not compressed through a text message)</span></label></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>When you're done</h3>
+    <p>Send the original video files (through Google Drive, Dropbox or WeTransfer, not a text message, which compresses them). Send every take; the best takes are cut together in the edit. Once the videos are edited, the VSL goes into the top of the dealer page and the confirmation video goes on the page people see after booking.</p>
+  </div>
+</section>
+  
+<section class="script" id="vsl">
+  <div class="script-head">
+    <div>
+      <p class="eyebrow">Video sales letter · plays on the landing page</p>
+      <h2>Go Rob Lacy Video Sales Letter</h2>
+      <p class="meta">About 5 minutes spoken · 9 sections</p>
+    </div>
+    <button class="copy" type="button" data-copy="vsl-text" id="copy-vsl">Copy script</button>
+  </div>
+  <div class="tl" role="img" aria-label="Section timing, 5:00 total">
+    <span style="flex:20" title="Opening Hook · 0:00–0:20"><i>Opening Hook</i></span><span style="flex:45" title="Problem Agitation · 0:20–1:05"><i>Problem Agitation</i></span><span style="flex:25" title="Authority / Credibility · 1:05–1:30"><i>Authority</i></span><span style="flex:25" title="Solution Introduction · 1:30–1:55"><i>Solution Introduction</i></span><span style="flex:85" title="How It Works — What You Get · 1:55–3:20"><i>How It Works</i></span><span style="flex:35" title="What It Looks Like In Your Store · 3:20–3:55"><i>What It Looks Like In Your Store</i></span><span style="flex:15" title="Urgency / Scarcity · 3:55–4:10"><i>Urgency</i></span><span style="flex:35" title="Call To Action · 4:10–4:45"><i>Call To Action</i></span><span style="flex:15" title="Final Close · 4:45–5:00"><i>Final Close</i></span>
+  </div>
+  <div class="tl-scale"><span>0:00</span><span>2:30</span><span>5:00</span></div>
+  <section class="sec" id="vsl-1"><header class="sec-h"><h3>Opening Hook</h3><span class="time">0:00 – 0:20</span></header><p class="dir">Presenter 1 on camera, confident and approachable</p><p class="say">"If you run a car dealership, a sales floor or a BDC — or you sell cars yourself — and you're tired of internet leads going cold and calls going to voicemail... stay with me.</p><p class="say">Because we want to build you a website, a CRM, and automated text and email follow-up — free."</p></section><section class="sec" id="vsl-2"><header class="sec-h"><h3>Problem Agitation</h3><span class="time">0:20 – 1:05</span></header><p class="dir">Transition to problem-focused visuals: a phone lighting up on an empty desk after hours, a lead inbox piling up — Presenter 2 if filming together</p><p class="say">"Look... you know how to sell cars.</p><p class="say">You know your inventory. You know how to work a deal. Your customers like working with you.</p><p class="say">But here's the reality...</p><p class="say">Selling cars well doesn't mean every lead gets answered.</p><p class="say">Right now, you're probably dealing with at least one of these:</p><ul class="say-list"><li>Internet leads that sit for hours before anyone replies — and by then they've heard from other stores.</li><li>Calls that ring out after hours, on your day off, or while you're with a customer.</li><li>Test drives and appointments that no-show because nobody confirmed them.</li><li>Old leads and past customers sitting in a system nobody follows up with.</li></ul><p class="say">And it's not because you or your team aren't good...</p><p class="say">It's because your website, your CRM and your follow-up aren't working together."</p></section><section class="sec" id="vsl-3"><header class="sec-h"><h3>Authority / Credibility</h3><span class="time">1:05 – 1:30</span></header><p class="dir">Presenter 1 back on camera — or both presenters in frame for the together version</p><p class="version">Solo version</p><p class="say">"Hi, I'm <span class="ph">ACTOR FIRST NAME</span> with Go Rob Lacy.</p><p class="say">My business partner <span class="ph">PARTNER FIRST NAME</span> and I build websites, CRMs and automated follow-up systems for businesses —</p><p class="say">and right now, we're building them for car dealerships and car salespeople.</p><p class="say">Our company runs on three words: People. Systems. Greater Results.</p><p class="say">Because great people deserve systems that work as hard as they do."</p><p class="version">Together version</p><p class="say"><span class="who">Presenter 1</span> "Hi, I'm <span class="ph">PRESENTER 1 FIRST NAME</span>—"</p><p class="say"><span class="who">Presenter 2</span> "—and I'm <span class="ph">PRESENTER 2 FIRST NAME</span>. We're Go Rob Lacy.</p><p class="say">We build websites, CRMs and automated follow-up systems for businesses — and right now, we're building them for car dealerships and car salespeople."</p><p class="say"><span class="who">Presenter 1</span> "Our company runs on three words: People. Systems. Greater Results. Because great people deserve systems that work as hard as they do."</p></section><section class="sec" id="vsl-4"><header class="sec-h"><h3>Solution Introduction</h3><span class="time">1:30 – 1:55</span></header><p class="dir">Visual transition to solution — Presenter 2 if filming together</p><p class="say">"Here's the thing...</p><p class="say">You might not have a lead problem.</p><p class="say">You might have a follow-up problem.</p><p class="say">Leads wait too long for a reply. Missed calls never get called back. Appointments don't get confirmed.</p><p class="say">And the website looks fine — but it doesn't turn shoppers into appointments.</p><p class="say">So instead of handing you one more piece of software to figure out on your own...</p><p class="say">We build the whole system for you — free to build."</p></section><section class="sec" id="vsl-5"><header class="sec-h"><h3>How It Works — What You Get</h3><span class="time">1:55 – 3:20</span></header><p class="dir">Visuals showing each piece: the website on a phone, the CRM pipeline, a text thread, an email — Presenter 1 if filming together</p><p class="say">"Here's exactly what you get.</p><p class="say">First... <strong>a free custom website.</strong> It's fast and built for phones first. It has landing pages for your inventory and your vehicle detail pages. And lead forms, click-to-call and click-to-text on every page — with your branding, your market and your contact details.</p><p class="say">Second... <strong>free CRM setup.</strong> One place for every lead, conversation and appointment — a sales pipeline from first inquiry to delivery, a two-way text and call inbox in one app, and an appointment and test-drive calendar.</p><p class="say">Third... <strong>automated SMS follow-up, set up free.</strong> New internet leads get a text back in under 60 seconds, day or night. Missed calls get an automatic text-back. Test drives and appointments get confirmations and reminders. And old leads and past customers who've opted in get re-engagement texts.</p><p class="say">And fourth... <strong>automated email follow-up, set up free.</strong> Welcome and follow-up sequences for new leads. Post-delivery review requests and service-to-sales follow-up. And appointment confirmations and reminders by email.</p><p class="say">Our team builds all of it. You don't need any tech skills.</p><p class="say">Then we get on a website reveal and onboarding call and walk you through your new website, CRM, SMS automations and email automations — so you know exactly how everything works."</p></section><section class="sec" id="vsl-6"><header class="sec-h"><h3>What It Looks Like In Your Store</h3><span class="time">3:20 – 3:55</span></header><p class="dir">Presenter 2 on camera if filming together — talk it through like a walk around the lot. Note: this replaces the Social Proof section. Add real, permission-granted dealer results here only once Go Rob Lacy has them.</p><p class="say">"Picture a normal week with this running.</p><p class="say">A shopper fills out a form on a Saturday night — they get a text back in under a minute.</p><p class="say">Someone calls while your whole team is with customers — they get a text back instead of a voicemail.</p><p class="say">Thursday's test drive gets a confirmation and a reminder.</p><p class="say">Last month's buyer gets asked for a review.</p><p class="say">And the leads that went quiet months ago hear from you again.</p><p class="say">All without anyone having to remember to send a thing."</p></section><section class="sec" id="vsl-7"><header class="sec-h"><h3>Urgency / Scarcity</h3><span class="time">3:55 – 4:10</span></header><p class="dir">Professional, confident tone — Presenter 1 if filming together</p><p class="say">"Now — spots for the free website and CRM build are limited per market.</p><p class="say">If you want yours, book your call now."</p></section><section class="sec" id="vsl-8"><header class="sec-h"><h3>Call To Action</h3><span class="time">4:10 – 4:45</span></header><p class="dir">Presenter 1 on camera — point down toward the booking button</p><p class="say">"So here's what I'd like you to do.</p><p class="say">Click the button below this video and book your free build call.</p><p class="say">On the call we'll:</p><ul class="say-list"><li>Learn how your store sells today — your units, your lead sources and your follow-up.</li><li>Look at your current website, your CRM and how missed calls are handled.</li><li>Show you exactly what we'll build for you.</li><li>Map out the website, CRM, SMS automations and email automations we'd build for you, free.</li></ul><p class="say">The call is free, the build is free, and there's no obligation."</p></section><section class="sec" id="vsl-9"><header class="sec-h"><h3>Final Close</h3><span class="time">4:45 – 5:00</span></header><p class="dir">Presenter on camera — both in frame for the together version</p><p class="say">"You've already done the hard part — you're selling cars.</p><p class="say">Now let's make sure every lead gets the follow-up it deserves.</p><p class="say">Click the button below... book your free build call...</p><p class="say">And let's build your website, CRM, SMS automations and email automations — free.</p><p class="version">Solo version</p><p class="say">I'm <span class="ph">ACTOR FIRST NAME</span> with Go Rob Lacy... and I look forward to talking with you soon."</p><p class="version">Together version</p><p class="say"><span class="who">Presenter 1</span> "I'm <span class="ph">PRESENTER 1 FIRST NAME</span>..." <span class="who">Presenter 2</span> "...and I'm <span class="ph">PRESENTER 2 FIRST NAME</span>, with Go Rob Lacy." <span class="who">Both</span> "Talk to you soon."</p></section>
+  <textarea class="sr-only" id="vsl-text" aria-hidden="true" tabindex="-1" readonly>OPENING HOOK (0–20 SECONDS)
+[Presenter 1 on camera, confident and approachable]
+"If you run a car dealership, a sales floor or a BDC — or you sell cars yourself — and you're tired of internet leads going cold and calls going to voicemail... stay with me.
+Because we want to build you a website, a CRM, and automated text and email follow-up — free."
+
+PROBLEM AGITATION (20–65 SECONDS)
+[Transition to problem-focused visuals: a phone lighting up on an empty desk after hours, a lead inbox piling up — Presenter 2 if filming together]
+"Look... you know how to sell cars.
+You know your inventory. You know how to work a deal. Your customers like working with you.
+But here's the reality...
+Selling cars well doesn't mean every lead gets answered.
+Right now, you're probably dealing with at least one of these:
+• Internet leads that sit for hours before anyone replies — and by then they've heard from other stores.
+• Calls that ring out after hours, on your day off, or while you're with a customer.
+• Test drives and appointments that no-show because nobody confirmed them.
+• Old leads and past customers sitting in a system nobody follows up with.
+And it's not because you or your team aren't good...
+It's because your website, your CRM and your follow-up aren't working together."
+
+AUTHORITY / CREDIBILITY (65–90 SECONDS)
+[Presenter 1 back on camera — or both presenters in frame for the together version]
+Solo version:
+"Hi, I'm ACTOR FIRST NAME with Go Rob Lacy.
+My business partner PARTNER FIRST NAME and I build websites, CRMs and automated follow-up systems for businesses —
+and right now, we're building them for car dealerships and car salespeople.
+Our company runs on three words: People. Systems. Greater Results.
+Because great people deserve systems that work as hard as they do."
+Together version:
+[Presenter 1] "Hi, I'm PRESENTER 1 FIRST NAME—"
+[Presenter 2] "—and I'm PRESENTER 2 FIRST NAME. We're Go Rob Lacy.
+We build websites, CRMs and automated follow-up systems for businesses — and right now, we're building them for car dealerships and car salespeople."
+[Presenter 1] "Our company runs on three words: People. Systems. Greater Results. Because great people deserve systems that work as hard as they do."
+
+SOLUTION INTRODUCTION (90–115 SECONDS)
+[Visual transition to solution — Presenter 2 if filming together]
+"Here's the thing...
+You might not have a lead problem.
+You might have a follow-up problem.
+Leads wait too long for a reply. Missed calls never get called back. Appointments don't get confirmed.
+And the website looks fine — but it doesn't turn shoppers into appointments.
+So instead of handing you one more piece of software to figure out on your own...
+We build the whole system for you — free to build."
+
+HOW IT WORKS — WHAT YOU GET (115–200 SECONDS)
+[Visuals showing each piece: the website on a phone, the CRM pipeline, a text thread, an email — Presenter 1 if filming together]
+"Here's exactly what you get.
+First... a free custom website. It's fast and built for phones first. It has landing pages for your inventory and your vehicle detail pages. And lead forms, click-to-call and click-to-text on every page — with your branding, your market and your contact details.
+Second... free CRM setup. One place for every lead, conversation and appointment — a sales pipeline from first inquiry to delivery, a two-way text and call inbox in one app, and an appointment and test-drive calendar.
+Third... automated SMS follow-up, set up free. New internet leads get a text back in under 60 seconds, day or night. Missed calls get an automatic text-back. Test drives and appointments get confirmations and reminders. And old leads and past customers who've opted in get re-engagement texts.
+And fourth... automated email follow-up, set up free. Welcome and follow-up sequences for new leads. Post-delivery review requests and service-to-sales follow-up. And appointment confirmations and reminders by email.
+Our team builds all of it. You don't need any tech skills.
+Then we get on a website reveal and onboarding call and walk you through your new website, CRM, SMS automations and email automations — so you know exactly how everything works."
+
+WHAT IT LOOKS LIKE IN YOUR STORE (200–235 SECONDS)
+[Presenter 2 on camera if filming together — talk it through like a walk around the lot. Note: this replaces the Social Proof section. Add real, permission-granted dealer results here only once Go Rob Lacy has them.]
+"Picture a normal week with this running.
+A shopper fills out a form on a Saturday night — they get a text back in under a minute.
+Someone calls while your whole team is with customers — they get a text back instead of a voicemail.
+Thursday's test drive gets a confirmation and a reminder.
+Last month's buyer gets asked for a review.
+And the leads that went quiet months ago hear from you again.
+All without anyone having to remember to send a thing."
+
+URGENCY / SCARCITY (235–250 SECONDS)
+[Professional, confident tone — Presenter 1 if filming together]
+"Now — spots for the free website and CRM build are limited per market.
+If you want yours, book your call now."
+
+CALL TO ACTION (250–285 SECONDS)
+[Presenter 1 on camera — point down toward the booking button]
+"So here's what I'd like you to do.
+Click the button below this video and book your free build call.
+On the call we'll:
+• Learn how your store sells today — your units, your lead sources and your follow-up.
+• Look at your current website, your CRM and how missed calls are handled.
+• Show you exactly what we'll build for you.
+• Map out the website, CRM, SMS automations and email automations we'd build for you, free.
+The call is free, the build is free, and there's no obligation."
+
+FINAL CLOSE (285–300 SECONDS)
+[Presenter on camera — both in frame for the together version]
+"You've already done the hard part — you're selling cars.
+Now let's make sure every lead gets the follow-up it deserves.
+Click the button below... book your free build call...
+And let's build your website, CRM, SMS automations and email automations — free.
+Solo version:
+I'm ACTOR FIRST NAME with Go Rob Lacy... and I look forward to talking with you soon."
+Together version:
+[Presenter 1] "I'm PRESENTER 1 FIRST NAME..." [Presenter 2] "...and I'm PRESENTER 2 FIRST NAME, with Go Rob Lacy." [Both] "Talk to you soon."
+</textarea>
+</section>
+  
+<section class="script" id="confirmation">
+  <div class="script-head">
+    <div>
+      <p class="eyebrow">Confirmation video · plays after someone books</p>
+      <h2>Go Rob Lacy Confirmation Page Script</h2>
+      <p class="meta">About 3½ minutes spoken · one take, six prep points</p>
+    </div>
+    <button class="copy" type="button" data-copy="confirmation-text" id="copy-confirmation">Copy script</button>
+  </div>
+  
+  <section class="sec" id="confirmation-1"><p class="dir">Presenter on camera — relaxed, professional, direct. Together version: Presenter 1 opens, Presenter 2 takes #4–#6, Presenter 1 closes.</p><p class="version">Solo version opening</p><p class="say">"Hey — it's <span class="ph">ACTOR FIRST NAME</span> from Go Rob Lacy.</p><p class="version">Together version opening</p><p class="say"><span class="who">Presenter 1</span> "Hey — it's <span class="ph">PRESENTER 1 FIRST NAME</span>..." <span class="who">Presenter 2</span> "...and <span class="ph">PRESENTER 2 FIRST NAME</span>, from Go Rob Lacy."</p><p class="version">Then</p><p class="say">First off, thank you for booking your free build call with us.</p><p class="say">Before your call, I want to take just a minute to explain what to expect, so we can make the absolute most of our time together.</p><p class="say">This isn't a high-pressure sales call.</p><p class="say">It's a conversation about your store — how you sell today, where your leads come from, and where follow-up falls through — so we can map out what we'd build for you.</p><p class="say">And just so it's fresh: here's what we build for you, free to build —</p><ul class="say-list"><li>A custom website.</li><li>Your CRM setup.</li><li>Automated SMS follow-up.</li><li>Automated email follow-up.</li></ul><p class="say">All done for you.</p><p class="say">So before the call, here's what I'd like you to prepare.</p><hr class="beat"><h4 class="step">#1. Please answer the phone at your scheduled time.</h4><p class="say">We'll be calling you at the number you gave us, so make sure you're somewhere quiet where you can give the conversation your full attention — off the sales floor if you can.</p><p class="say">Treat this like an important business meeting — because it is.</p><hr class="beat"><h4 class="step">#2. Be on time.</h4><p class="say">We set aside dedicated time for every dealer and salesperson we talk to.</p><p class="say">If something comes up, let us know ahead of time — email rob@goroblacy.com, or call or text us at 928-392-4421 — and we'll find you a new time.</p><hr class="beat"><h4 class="step">#3. Have a reliable phone connection.</h4><p class="say">We want the conversation to be productive, without dropped calls or poor call quality.</p><hr class="beat"><h4 class="step">#4. Be ready to talk about your store.</h4><p class="say">Specifically, be ready to talk about:</p><ul class="say-list"><li>Roughly how many units you sell a month.</li><li>Your lead sources — your website, third-party sites, phone, walk-ins — and about how many leads you get.</li><li>Who runs your website today.</li><li>The CRM and DMS you use now.</li><li>How your BDC and follow-up work — and how missed calls are handled.</li></ul><p class="say">If you're a salesperson rather than the whole store, think about your own numbers: how many cars you sell, where your customers come from, and how you follow up today.</p><hr class="beat"><h4 class="step">#5. Think about your goals.</h4><p class="say">Whether you want to answer leads faster...</p><p class="say">Stop missing calls...</p><p class="say">Get more of your test drives to actually show up...</p><p class="say">Get more reviews...</p><p class="say">Or bring old leads and past customers back...</p><p class="say">We'll tailor the conversation around what matters most to you.</p><hr class="beat"><h4 class="step">#6. Come with questions.</h4><p class="say">This call is all about you.</p><p class="say">If there's anything you've been wondering about — the website, the CRM, the texts and emails, or how it all fits with the tools you use today...</p><p class="say">This is your time to ask.</p><hr class="beat"><p class="say">One last thing...</p><p class="say">Spots for the free website and CRM build are limited per market.</p><p class="say">This call helps us make sure we build the right thing for you.</p><p class="say">So come prepared, be open, and let's map out the website, CRM, SMS automations and email automations we'd build for you — free.</p><p class="say">Thanks again for booking.</p><p class="say">I'm looking forward to learning about your store...</p><p class="say">Talk to you soon."</p></section>
+  <textarea class="sr-only" id="confirmation-text" aria-hidden="true" tabindex="-1" readonly>[Presenter on camera — relaxed, professional, direct. Together version: Presenter 1 opens, Presenter 2 takes #4–#6, Presenter 1 closes.]
+Solo version opening:
+"Hey — it's ACTOR FIRST NAME from Go Rob Lacy.
+Together version opening:
+[Presenter 1] "Hey — it's PRESENTER 1 FIRST NAME..." [Presenter 2] "...and PRESENTER 2 FIRST NAME, from Go Rob Lacy."
+Then:
+First off, thank you for booking your free build call with us.
+Before your call, I want to take just a minute to explain what to expect, so we can make the absolute most of our time together.
+This isn't a high-pressure sales call.
+It's a conversation about your store — how you sell today, where your leads come from, and where follow-up falls through — so we can map out what we'd build for you.
+And just so it's fresh: here's what we build for you, free to build —
+• A custom website.
+• Your CRM setup.
+• Automated SMS follow-up.
+• Automated email follow-up.
+All done for you.
+So before the call, here's what I'd like you to prepare.
+—
+#1. Please answer the phone at your scheduled time.
+We'll be calling you at the number you gave us, so make sure you're somewhere quiet where you can give the conversation your full attention — off the sales floor if you can.
+Treat this like an important business meeting — because it is.
+—
+#2. Be on time.
+We set aside dedicated time for every dealer and salesperson we talk to.
+If something comes up, let us know ahead of time — email rob@goroblacy.com, or call or text us at 928-392-4421 — and we'll find you a new time.
+—
+#3. Have a reliable phone connection.
+We want the conversation to be productive, without dropped calls or poor call quality.
+—
+#4. Be ready to talk about your store.
+Specifically, be ready to talk about:
+• Roughly how many units you sell a month.
+• Your lead sources — your website, third-party sites, phone, walk-ins — and about how many leads you get.
+• Who runs your website today.
+• The CRM and DMS you use now.
+• How your BDC and follow-up work — and how missed calls are handled.
+If you're a salesperson rather than the whole store, think about your own numbers: how many cars you sell, where your customers come from, and how you follow up today.
+—
+#5. Think about your goals.
+Whether you want to answer leads faster...
+Stop missing calls...
+Get more of your test drives to actually show up...
+Get more reviews...
+Or bring old leads and past customers back...
+We'll tailor the conversation around what matters most to you.
+—
+#6. Come with questions.
+This call is all about you.
+If there's anything you've been wondering about — the website, the CRM, the texts and emails, or how it all fits with the tools you use today...
+This is your time to ask.
+—
+One last thing...
+Spots for the free website and CRM build are limited per market.
+This call helps us make sure we build the right thing for you.
+So come prepared, be open, and let's map out the website, CRM, SMS automations and email automations we'd build for you — free.
+Thanks again for booking.
+I'm looking forward to learning about your store...
+Talk to you soon."
+</textarea>
+</section>
+
+  <footer class="foot">
+    <p>Go Rob Lacy Inc. · People | Systems | Greater Results</p>
+    <p>Live page: <a href="https://site-go-rob-lacy-dealers.vercel.app" target="_blank" rel="noopener">site-go-rob-lacy-dealers.vercel.app</a></p>
+  </footer>
+</div>
+<script>
+(function () {
+  var KEY = "grl-film-ticks";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+  document.querySelectorAll('.ticks input[type="checkbox"]').forEach(function (cb) {
+    cb.checked = !!saved[cb.id];
+    cb.addEventListener("change", function () {
+      saved[cb.id] = cb.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+  document.querySelectorAll("button.copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var ta = document.getElementById(btn.getAttribute("data-copy"));
+      var text = ta.value;
+      var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy script"; }, 1800); };
+      var fallback = function () {
+        ta.classList.remove("sr-only"); ta.classList.add("shown"); ta.removeAttribute("aria-hidden");
+        ta.focus(); ta.select(); btn.textContent = "Selected — press Ctrl/⌘+C";
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
