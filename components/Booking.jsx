@@ -6,6 +6,8 @@ import { SITE } from "@/lib/site";
 // book. Until the GHL keys are set in Vercel the API answers 503 and the form
 // swaps to a friendly call / text / email fallback.
 const DAYS_AHEAD = 21;
+// Shown next to the checkbox and stored with the booking as the consent record.
+const CONSENT_TEXT = `Yes, ${SITE.legalName} may text me at the number above about my call and this offer, including appointment reminders. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of booking or of any purchase.`;
 const ROLES = [
   "Dealer principal / owner",
   "General manager",
@@ -66,7 +68,7 @@ export default function Booking() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           firstName: f.get("firstName"), lastName: f.get("lastName"), email: f.get("email"), phone: f.get("phone"),
-          dealership: f.get("dealership"), role: f.get("role"), smsConsent: f.get("smsConsent") === "on", startTime: time,
+          dealership: f.get("dealership"), role: f.get("role"), smsConsent: f.get("smsConsent") === "on", consentText: CONSENT_TEXT, pageUrl: window.location.href, startTime: time,
         }),
       });
       const data = await r.json().catch(() => ({}));
@@ -101,7 +103,7 @@ export default function Booking() {
           <div className="row">
             <a className="btn btn-primary" href={SITE.phoneHref}>Call {SITE.phoneDisplay}</a>
             <a className="btn btn-ghost" href={SITE.smsHref}>Text us</a>
-            <a className="btn btn-ghost" href={`mailto:${SITE.email}?subject=${encodeURIComponent("Free dealership website + CRM build")}`}>Email {SITE.email}</a>
+            <a className="btn btn-ghost" href={`mailto:${SITE.email}?subject=${encodeURIComponent("Free build call — dealership website + CRM")}`}>Email {SITE.email}</a>
           </div>
         </div>
       </div>
@@ -110,7 +112,7 @@ export default function Booking() {
 
   return (
     <form className="card booker" onSubmit={submit} noValidate={false}>
-      <div className="booker-meta"><span>Free 1-on-1 call</span><span>·</span><span>No obligation</span><span>·</span><span>Confidential</span></div>
+      <div className="booker-meta"><span>Free 1-on-1 phone call</span><span>·</span><span>No obligation</span><span>·</span><span>Confidential</span></div>
 
       <span className="blabel" id="pick-day">Pick a day</span>
       {state === "loading" ? (
@@ -155,10 +157,7 @@ export default function Booking() {
       <label className="consent">
         <input type="checkbox" name="smsConsent" />
         <span>
-          Yes, {SITE.legalName} may text me at the number above about my call and this offer,
-          including appointment reminders. Message frequency varies. Msg &amp; data rates may apply.
-          Reply STOP to opt out, HELP for help. Consent isn't required to book.
-          See our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms</a>.
+          {CONSENT_TEXT} See our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms</a>.
         </span>
       </label>
 

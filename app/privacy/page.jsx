@@ -30,8 +30,20 @@ export default function Privacy() {
         <h2>How long we keep it</h2>
         <p>We keep your information for as long as we need it for the purposes above or as required by law, then delete it.</p>
 
+        <h2>Cookies and embedded video</h2>
+        <p>This site doesn't use advertising or analytics cookies. If you play a video that's hosted by a video platform (such as Vimeo or YouTube), that platform may set its own cookies under its own privacy policy.</p>
+
+        <h2>Security</h2>
+        <p>We use reasonable safeguards to protect your information, and our providers send it over encrypted connections. No method of transmission or storage is completely secure.</p>
+
+        <h2>Children</h2>
+        <p>This site is for businesses and adults. We don't knowingly collect information from children under 13.</p>
+
         <h2>Your choices</h2>
         <p>You can ask us to access, correct or delete your information, or to stop contacting you, by emailing <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or calling {SITE.phoneDisplay}.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>If we change this policy we'll update the date at the top of this page.</p>
 
         <h2>Contact</h2>
         <p>{SITE.legalName}<br />{SITE.address}<br /><a href={`mailto:${SITE.email}`}>{SITE.email}</a> · {SITE.phoneDisplay}</p>

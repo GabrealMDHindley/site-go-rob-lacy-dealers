@@ -29,7 +29,7 @@ export default function Calculator() {
   return (
     <div className="calc">
       <div className="card rv">
-        <Range id="c-leads" label="Leads per month (internet, phone, walk-in)" value={leads} set={setLeads} min={10} max={1000} step={10} show={(v) => fmt(v)} scale={["10", "1,000"]} />
+        <Range id="c-leads" label="Leads per month (internet + phone for a conservative view)" value={leads} set={setLeads} min={10} max={1000} step={10} show={(v) => fmt(v)} scale={["10", "1,000"]} />
         <Range id="c-close" label="Your current closing rate" value={close} set={setClose} min={1} max={40} step={1} show={(v) => v + "%"} scale={["1%", "40%"]} />
         <Range id="c-gross" label="Average gross per unit (front + back)" value={gross} set={setGross} min={250} max={10000} step={250} show={money} scale={["$250", "$10,000"]} />
         <Range id="c-lift" label="What if you closed this many more points?" value={lift} set={setLift} min={0.5} max={5} step={0.5} show={(v) => "+" + v + " pt"} scale={["+0.5", "+5"]} />
@@ -39,7 +39,7 @@ export default function Calculator() {
         <div className="res-big gold-text">{money(extraMonth)}</div>
         <div className="res-lbl">{money(extraMonth * 12)} per year</div>
         <div className="res-rows">
-          <div className="srow"><span>Units you sell from these leads now</span><span>{fmt(unitsNow)} / mo</span></div>
+          <div className="srow"><span>Units you sell from these leads now</span><span>{unitsNow.toLocaleString("en-US", { maximumFractionDigits: 1 })} / mo</span></div>
           <div className="srow"><span>Extra units at +{lift} pt</span><span>{extraUnits.toLocaleString("en-US", { maximumFractionDigits: 1 })} / mo</span></div>
           <div className="srow"><span>Gross per extra unit</span><span>{money(gross)}</span></div>
         </div>

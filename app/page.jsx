@@ -6,7 +6,7 @@ import Booking from "@/components/Booking";
 import { VIDEOS } from "@/lib/site";
 
 const MARQUEE = [
-  "Free custom website",
+  "Custom website, built free",
   "Inventory & VDP landing pages",
   "CRM setup",
   "Automated SMS follow-up",
@@ -29,7 +29,7 @@ const TILES = [
 const GETS = [
   {
     icon: "web",
-    title: "Free custom website",
+    title: "Free custom website build",
     body: "A fast, mobile-first website built for your store — or for you as a salesperson — designed to turn shoppers into booked appointments.",
     checks: [
       "Inventory- and VDP-focused landing pages",
@@ -51,18 +51,18 @@ const GETS = [
   },
   {
     icon: "sms",
-    title: "Free automated SMS follow-up",
-    body: "New internet leads get a text back in under 60 seconds, day or night — and the follow-up keeps going so leads don't go cold.",
+    title: "Automated SMS follow-up, set up free",
+    body: "New internet leads get a text back in under 60 seconds, day or night — and the follow-up keeps going to help keep leads from going cold.",
     checks: [
       "Under-60-second text reply to new internet leads",
       "Missed-call text-back",
       "Test-drive and appointment confirmations and reminders",
-      "Re-engagement texts for old leads and past customers",
+      "Re-engagement texts for old leads and past customers who've opted in",
     ],
   },
   {
     icon: "mail",
-    title: "Free automated email follow-up",
+    title: "Automated email follow-up, set up free",
     body: "Email sequences that keep you in front of shoppers and customers without anyone having to remember to send them.",
     checks: [
       "Welcome and follow-up sequences for new leads",
@@ -99,21 +99,15 @@ const STEPS = [
   {
     k: "Step 03",
     title: "Website reveal & onboarding call",
-    body: "We walk you through your new website, CRM, SMS automations and email automations so you know exactly how everything works.",
+    body: "On a call, with a link to your new site so you can follow along, we walk you through your new website, CRM, SMS automations and email automations so you know exactly how everything works.",
     list: ["See your new website", "How leads reach your phone and inbox", "Your follow-up, step by step", "Your questions answered"],
-  },
-  {
-    k: "Step 04",
-    title: "Ongoing support",
-    body: "Questions once you're live? Our team is here to help you get the most out of your new system.",
-    list: [],
   },
 ];
 
 const FAQ = [
   {
-    q: "Is the website and CRM really free?",
-    a: "Yes. We build your website, set up your CRM, and turn on your SMS and email automations for free. There's no obligation — you'll see everything on your website reveal call.",
+    q: "What does the free build include?",
+    a: "We build your website, set up your CRM, and set up your SMS and email automations at no cost to you. There's no obligation — you'll see everything on your website reveal call.",
   },
   {
     q: "How long does it take to go live?",
@@ -129,7 +123,7 @@ const FAQ = [
   },
   {
     q: "Does this replace my DMS or my current CRM?",
-    a: "Your DMS stays where it is. On the call we'll look at the tools you use today — your DMS, CRM and lead providers — and talk through how your new system fits alongside them.",
+    a: "Your DMS stays where it is. If you already run a CRM, we'll look at it with you on the call — along with your lead providers — and talk through how your new system would fit alongside it or replace it.",
   },
   {
     q: "Can I keep my website domain and phone number?",
@@ -177,12 +171,12 @@ export default function Home() {
           <div className="hero-grid">
             <div className="hero-a">
               <span className="eyebrow rv">For car dealerships &amp; car salespeople</span>
-              <Kinetic as="h1" id="hero-title" className="h1" delay={100} text="Get a *free* website, CRM & automated follow-up — built for you." />
+              <Kinetic as="h1" id="hero-title" className="h1" delay={100} text="Get your website, CRM & automated follow-up *built free* — done for you." />
             </div>
             <div className="hero-b">
               <p className="hero-sub rv" style={{ "--d": "220ms" }}>
                 We build your website, set up your CRM, and turn on automated text and email
-                follow-up — so every internet lead, missed call and test drive gets a fast,
+                follow-up — so internet leads, missed calls and test drives get a fast,
                 consistent response. Free to build. No obligation.
               </p>
               <div className="hero-ctas rv" style={{ "--d": "340ms" }}>
@@ -190,9 +184,9 @@ export default function Home() {
                 <a href="#included" className="btn btn-ghost">See what's included</a>
               </div>
               <ul className="hero-ticks rv" style={{ "--d": "420ms" }}>
-                <li>Free custom website</li>
+                <li>Website built free</li>
                 <li>Done-for-you setup</li>
-                <li>Instant SMS &amp; email follow-up</li>
+                <li>Automated SMS &amp; email follow-up</li>
               </ul>
             </div>
             <div className="hero-v vframe-wrap rv" style={{ "--d": "260ms" }}>
@@ -204,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* MARQUEE */}
-      <div className="marquee" aria-label="What's included">
+      <div className="marquee" aria-hidden="true">
         <div className="marquee-track">
           {[0, 1].map((k) => (
             <ul key={k} aria-hidden={k === 1}>
@@ -220,9 +214,9 @@ export default function Home() {
           <div className="tiles">
             {TILES.map(([n, l], i) => (
               <div key={n} className="card tile tilt rv" style={{ "--d": `${i * 90}ms` }}>
-                <div className="num gold-text glow-text">{n}</div>
+                <div className="num gold-text glow-text" aria-hidden="true">{n}</div>
                 <div className="lbl">{l}</div>
-                <div className="sub">Included free</div>
+                <div className="sub">Built free</div>
               </div>
             ))}
           </div>
@@ -234,7 +228,7 @@ export default function Home() {
         <div className="wrap wrap-56">
           <p className="mission rv">
             You might not have a lead problem. You might have a <em className="gold-text">follow-up</em> problem —
-            leads waiting hours for a reply, calls that ring out after close, customers nobody calls back.
+            leads waiting hours for a reply, calls that ring out after hours, customers nobody calls back.
             We build the system that answers for you.
           </p>
         </div>
@@ -252,7 +246,7 @@ export default function Home() {
           <div className="gets">
             {GETS.map((g, i) => (
               <article key={g.title} className="card get tilt rv" style={{ "--d": `${(i % 2) * 100}ms` }}>
-                <div className="get-top"><Icon name={g.icon} /><span className="badge">Included free</span></div>
+                <div className="get-top"><Icon name={g.icon} /><span className="badge">Built free</span></div>
                 <h3>{g.title}</h3>
                 <p>{g.body}</p>
                 <ul className="checks">
@@ -272,7 +266,7 @@ export default function Home() {
               <div className="head">
                 <span className="eyebrow rv">Done-for-you setup</span>
                 <Kinetic id="dfy-title" text="Built for you — *zero* tech skills needed" className="h2" />
-                <p className="lede rv">Our team handles the setup — website, CRM, texts and emails — so you never have to touch the tech.</p>
+                <p className="lede rv">Our team handles the setup — website, CRM, texts and emails — so you don't have to set up the tech.</p>
               </div>
               <div className="mini">
                 {[
@@ -315,7 +309,7 @@ export default function Home() {
             {[
               ["For the whole store", "One system for the dealership: website, CRM and follow-up for every salesperson and the BDC."],
               ["For you on the floor", "Get your own website, CRM and follow-up, so your customer follow-up never depends on remembering to send it."],
-              ["Mobile-first everything", "Website, texts and inbox all work from your phone — on the lot, on a test drive or after close."],
+              ["Mobile-first everything", "Website, texts and inbox all work from your phone — on the lot, on a test drive or after hours."],
             ].map(([t, d], i) => (
               <div key={t} className="card tilt rv" style={{ "--d": `${i * 90}ms` }}><h3>{t}</h3><p>{d}</p></div>
             ))}
@@ -326,7 +320,7 @@ export default function Home() {
       {/* HOW IT WORKS */}
       <section className="section" id="how-it-works" aria-labelledby="how-title">
         <div className="wrap wrap-64">
-          <Head id="how-title" eyebrow="How it works" title="From free call to fully built — here's the process" />
+          <Head id="how-title" eyebrow="How it works" title="From your free call to fully built — here's the process" />
           <div className="tl">
             <div className="tl-rail" aria-hidden="true"><div className="tl-fill" /></div>
             {STEPS.map((s) => (
@@ -375,9 +369,9 @@ export default function Home() {
         <div className="wrap wrap-42">
           <Head
             id="book-title"
-            eyebrow="Reserve your free build"
+            eyebrow="Book your free build call"
             title="Claim your *free* website & CRM build"
-            lede="Spots for the free website and CRM build are limited per market. Pick a time for your free 1-on-1 call."
+            lede="Spots for the free website and CRM build are limited per market. Pick a time for your free build call."
           />
           <div className="rv"><Booking /></div>
         </div>

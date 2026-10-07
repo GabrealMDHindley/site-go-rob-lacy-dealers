@@ -24,6 +24,8 @@ export async function POST(request) {
   const dealership = clean(body.dealership, 120);
   const role = clean(body.role, 60);
   const smsConsent = body.smsConsent === true;
+  const consentText = clean(body.consentText, 600);
+  const pageUrl = clean(body.pageUrl, 300);
 
   if (!firstName || !lastName || !email || !phone || !startTime || Number.isNaN(Date.parse(startTime))) {
     return Response.json({ error: "Missing required fields" }, { status: 400 });
@@ -68,6 +70,21 @@ export async function POST(request) {
     if (!contactId) {
       return Response.json({ error: "GoHighLevel did not return a contact id" }, { status: 502 });
     }
+
+    // Consent record (TCPA audit trail): what was shown, when, where. Best effort —
+    // a failed note never blocks the booking.
+    const note = [
+      `Booked via the dealer free-build landing page${pageUrl ? ` (${pageUrl})` : ""}.`,
+      dealership ? `Dealership: ${dealership}` : "",
+      role ? `Role: ${role}` : "",
+      `SMS consent: ${smsConsent ? "YES" : "no"} at ${new Date().toISOString()}`,
+      smsConsent && consentText ? `Consent text shown: "${consentText}"` : "",
+    ].filter(Boolean).join("\n");
+    await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/notes`, {
+      method: "POST",
+      headers: { ...baseHeaders, Version: "2021-07-28" },
+      body: JSON.stringify({ body: note }),
+    }).catch(() => {});
 
     const who = [`${firstName} ${lastName}`, dealership, role].filter(Boolean).join(" · ");
     const apptRes = await fetch("https://services.leadconnectorhq.com/calendars/events/appointments", {
